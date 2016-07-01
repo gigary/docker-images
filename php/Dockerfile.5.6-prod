@@ -1,0 +1,13 @@
+FROM gigary/base:3.4
+MAINTAINER Michael Bui <mf.michaelbui@gmail.com>
+
+RUN apk add --update-cache \
+    php5-fpm php5-cli php5-mysql php5-pdo_mysql \
+    php5-mcrypt php5-curl php5-json php5-ctype php5-zlib php5-dom php5-xml php5-openssl
+
+RUN rm -rf /var/cache/apk/*
+
+ADD root /
+
+EXPOSE 9000
+
